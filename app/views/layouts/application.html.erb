@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id='container'>
+    <h1>DoubleOweb</h1>
+    <ul class="nav nav-tabs span12">
+      <li class="active">
+      <a href="#">Home</a>
+      </li>
+      <li><a href="#">Rails</a></li>
+      <li><a href="#">Ruby</a></li>
+      <li><a href="#">About Dan</a></li>
+      <li><a href="#">About Tim</a></li>
+    </ul>
+    <div class='auto center'>
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
