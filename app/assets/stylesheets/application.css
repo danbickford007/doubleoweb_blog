@@ -12,6 +12,9 @@
  *= require_tree .
  */
 
+body{
+  background-image: url('blue.png');
+}
 .center{
   text-align:center;
 }
