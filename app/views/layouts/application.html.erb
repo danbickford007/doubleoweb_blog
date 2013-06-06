@@ -10,17 +10,28 @@
   <div id='container'>
     <h1>DoubleOweb</h1>
     <ul class="nav nav-tabs span12">
-      <li class="active">
-      <a href="#">Home</a>
-      </li>
+      <li><%= link_to 'Home', '/' %></li>
       <li><%= link_to 'Rails', '/rails' %></li>
       <li><%= link_to 'Ruby', '/ruby' %></li>
       <li><%= link_to 'About Dan', '/dan-bickford' %></li>
       <li><%= link_to 'About Tim', '/tim-nelson' %></li>
     </ul>
-    <div class='auto center'>
+    <div class='auto'>
       <%= yield %>
     </div>
   </div>
+  <script>
+ // Javascript to enable link to tab
+var hash = document.location.hash;
+var prefix = "tab_";
+if (hash) {
+    $('.nav-tabs a[href='+hash.replace(prefix,"")+']').tab('show');
+} 
+
+// Change hash for page-reload
+$('.nav-tabs a').on('shown', function (e) {
+    window.location.hash = e.target.hash.replace("#", "#" + prefix);
+}); 
+  </script>
 </body>
 </html>
